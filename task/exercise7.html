@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Flag Selector</title>
+    <style>
+        img {
+            margin-top: 20px;
+            width: 300px;
+            height: 200px;
+            border: 1px solid #ccc;
+        } 
+    </style>
+</head>
+<body>
+
+    <select id="countrySelect">
+        <option value="uk" selected>UK</option>
+        <option value="canada">Canada</option>
+        <option value="norway">Norway</option>
+    </select>
+    <br>
+    <img id="flagImage" src="UK flag.png" alt="UK Flag">
+
+    <script>
+        
+        const countrySelect = document.getElementById('countrySelect');
+        const flagImage = document.getElementById('flagImage');
+
+        countrySelect.addEventListener('change', function() {
+            const selectedCountry = countrySelect.value;
+
+            switch (selectedCountry) {
+                case 'uk':
+                    flagImage.src = 'UK flag.png';
+                    flagImage.alt = 'UK Flag';
+                    break;
+                case 'canada':
+                    flagImage.src = 'Canada Falg.png';
+                    flagImage.alt = 'Canada Flag';
+                    break;
+                case 'norway':
+                    flagImage.src = 'Narway flag.png';
+                    flagImage.alt = 'Norway Flag';
+                    break;
+                default:
+                    flagImage.src = '';
+                    flagImage.alt = 'Country Flag';
+            }
+        });
+    </script>
+</body>
+</html>
